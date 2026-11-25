@@ -1,71 +1,242 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>Wireless Charging Lab</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="icon" href="assets/logo.png">
-<link rel="stylesheet" href="css/style.css"></head><body>
-<nav><img class="lg" alt="MMA logo"><a href="#home">Home</a><a href="#how">How It Works</a><a href="#science">The Science</a><a href="#factors">Factors</a><a href="#lab">Interactive Lab</a><a href="#challenge">Discover &amp; Challenge</a></nav>
+<html lang="en">
 
-<main>
-<section id="home" class="w"><div class="hero"><div><span class="tag">WIRELESS CHARGING LAB</span><h1>Charge without <span class="cy">cables.</span></h1>
-<div class="q">How does wireless charging actually work?</div>
-<p>Wireless charging sends energy across a small gap using a changing magnetic field (not radio waves) instead of a cable. In this lab you will see it, play with it and measure it.</p>
-<div class="row"><a class="btn" href="#how">Start exploring</a><a class="btn o" href="#lab">Jump to the lab</a></div></div>
-<canvas id="c0" style="height:340px"></canvas></div>
-<div class="grid" style="margin-top:26px">
-<div class="card"><h3>The idea</h3><p>A charging pad and a phone each hide a coil of wire. Energy jumps from one coil to the other through a magnetic field.</p></div>
-<div class="card"><h3>The goal</h3><p>Understand not only how it works, but why distance, alignment and heat change how well it charges.</p></div>
-<div class="card"><h3>Induction in 10 seconds</h3><p>A changing magnetic field creates a voltage in a nearby coil, and that voltage drives a current. That is electromagnetic induction.</p></div>
-<div class="card"><h3>Live experiments</h3><p>Drag a phone, heat it up and run a full charging simulation. The code does the physics for you.</p></div></div>
-<h2 style="margin-top:34px">Choose your stage</h2>
-<div class="grid"><a class="card btn o" href="#how">1 · How It Works</a><a class="card btn o" href="#science">2 · The Science</a><a class="card btn o" href="#factors">3 · Factors</a><a class="card btn o" href="#lab">4 · Interactive Lab</a><a class="card btn o" href="#challenge">5 · Challenge</a></div>
-</section>
+<head>
+    <meta charset="utf-8">
+    <title>Wireless Charging Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="icon" href="assets/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-<section id="how" class="w" hidden><span class="tag">STAGE 02</span><h1>How it works</h1>
-<p>Press each step and watch the animation. The charger has two main parts: the <b class="cy">transmitter coil</b> in the pad and the <b class="cy">receiver coil</b> inside the phone.</p>
-<div class="step" id="st"></div><canvas id="c1" style="height:380px"></canvas><div class="card" id="sx" style="margin-top:14px"></div></section>
+<body>
+    <nav><img class="lg" alt="MMA logo"><a href="#home">Home</a><a href="#how">How It Works</a><a href="#science">The
+            Science</a><a href="#factors">Factors</a><a href="#lab">Interactive Lab</a><a href="#challenge">Discover
+            &amp; Challenge</a></nav>
 
-<section id="science" class="w" hidden><span class="tag">STAGE 03</span><h1>The science</h1>
-<p>Seven power-ups of knowledge. Tap a card to open it.</p><div class="grid" id="sg"></div></section>
+    <main>
+        <section id="home" class="w">
+            <div class="hero">
+                <div><span class="tag">WIRELESS CHARGING LAB</span>
+                    <h1>Charge without <span class="cy">cables.</span></h1>
+                    <div class="q">How does wireless charging actually work?</div>
+                    <p>Wireless charging sends energy across a small gap using a changing magnetic field (not radio
+                        waves) instead of a cable. In this lab you will see it, play with it and measure it.</p>
+                    <div class="row"><a class="btn" href="#how">Start exploring</a><a class="btn o" href="#lab">Jump to
+                            the lab</a></div>
+                </div>
+                <canvas id="c0" style="height:340px"></canvas>
+            </div>
+            <div class="grid" style="margin-top:26px">
+                <div class="card">
+                    <h3>The idea</h3>
+                    <p>A charging pad and a phone each hide a coil of wire. Energy jumps from one coil to the other
+                        through a magnetic field.</p>
+                </div>
+                <div class="card">
+                    <h3>The goal</h3>
+                    <p>Understand not only how it works, but why distance, alignment and heat change how well it
+                        charges.</p>
+                </div>
+                <div class="card">
+                    <h3>Induction in 10 seconds</h3>
+                    <p>A changing magnetic field creates a voltage in a nearby coil, and that voltage drives a current.
+                        That is electromagnetic induction.</p>
+                </div>
+                <div class="card">
+                    <h3>Live experiments</h3>
+                    <p>Drag a phone, heat it up and run a full charging simulation. The code does the physics for you.
+                    </p>
+                </div>
+            </div>
+            <h2 style="margin-top:34px">Choose your stage</h2>
+            <div class="grid"><a class="card btn o" href="#how">1 · How It Works</a><a class="card btn o"
+                    href="#science">2 · The Science</a><a class="card btn o" href="#factors">3 · Factors</a><a
+                    class="card btn o" href="#lab">4 · Interactive Lab</a><a class="card btn o" href="#challenge">5 ·
+                    Challenge</a></div>
+        </section>
 
-<section id="factors" class="w" hidden><span class="tag">STAGE 04</span><h1>Factors affecting charging</h1>
-<p>Four things change how well your phone charges. Pick one and try it. Metal objects between the phone and the pad (a coin, a card, a ring) also hurt: they heat up and waste energy, so chargers detect them and stop.</p><p class="sm">The numbers use a simplified model for learning, not data from a real device.</p><div class="step" id="ft"></div>
-<div class="hero"><div><canvas id="c2" style="height:300px"></canvas><div class="sm" id="fcap" style="margin-top:8px;text-align:center"></div></div><div class="card"><h3 id="fh"></h3><p id="fp"></p><div class="ctl"><span>Value</span><input id="fr" type="range"><b id="fv"></b></div><div class="m"><div><b id="fo"></b><span id="fl"></span></div></div></div></div></section>
+        <section id="how" class="w" hidden><span class="tag">STAGE 02</span>
+            <h1>How it works</h1>
+            <p>Press each step and watch the animation. The charger has two main parts: the <b class="cy">transmitter
+                    coil</b> in the pad and the <b class="cy">receiver coil</b> inside the phone.</p>
+            <div class="step" id="st"></div><canvas id="c1" style="height:380px"></canvas>
+            <div class="card" id="sx" style="margin-top:14px"></div>
+        </section>
 
-<section id="lab" class="w" hidden><span class="tag">STAGE 05</span><h1>Interactive lab</h1>
-<div class="step"><button class="on" data-e="e1">Exp 01 · Alignment</button><button data-e="e2">Exp 02 · Temperature</button><button data-e="e3">Exp 03 · Full charging</button><button data-e="e4">Exp 04 · Charging game</button></div>
-<div id="e1"><p>Drag the phone left and right on the pad. Find the sweet spot! (charger input 15 W, gap 1 cm; simplified model)</p><div class="hero"><canvas id="c3" style="height:300px;cursor:grab"></canvas><canvas id="c4" style="height:300px"></canvas></div><div class="m" id="m1"></div><div class="card" id="x1"></div></div>
-<div id="e2" hidden><p>Change the temperature and see how losses and received power change (charger input 15 W, phone centered, 1 cm away). Simplified model for learning.</p><div class="hero"><div><div class="ctl"><span>Temperature</span><input id="t2" type="range" min="20" max="50" value="25"><b id="v2"></b></div><div class="m" id="m2"></div><div class="card" id="x2"></div></div><canvas id="c5" style="height:280px"></canvas></div></div>
-<div id="e3" hidden><p>Combine everything, then press Start. Time runs fast: 8 minutes per second. The last 20% of the battery charges slowly, like a real phone. Simplified model for learning.</p><div class="hero"><div>
-<div class="ctl"><span>Distance</span><input id="s_d" type="range" min="0.5" max="3" step=".1" value="1"><b></b></div><div class="ctl"><span>Offset</span><input id="s_x" type="range" min="-5" max="5" step=".5" value="1"><b></b></div>
-<div class="ctl"><span>Start temp</span><input id="s_t" type="range" min="20" max="40" value="25"><b></b></div><div class="ctl"><span>Power</span><input id="s_p" type="range" min="5" max="30" value="15"><b></b></div>
-<div class="row"><button class="btn" id="go">Start charging</button><button class="btn o" id="rs">Reset</button></div></div><canvas id="c6" style="height:260px"></canvas></div>
-<canvas id="c7" style="height:220px;margin-top:14px"></canvas><div class="m" id="m3"></div><div class="card" id="x3">Press Start to run the simulation.</div></div><div id="e4" hidden><p>Find the perfect charging position. Drag the phone on the pad and watch the magnetic field, the power and the coupling respond. Every number comes from one physics model running in your browser.</p>
-<div class="lvls" id="g_lv"></div><div class="card" id="g_goal"></div>
-<div class="hero g-hero" style="margin-top:14px"><div><canvas id="g_top" tabindex="0" style="height:360px;cursor:grab" aria-label="Top view of the phone on the charging pad. Drag or use arrow keys."></canvas><div class="sm">Top view: drag the phone (or use the arrow keys).</div></div>
-<div><canvas id="g_side" style="height:360px"></canvas><div class="sm">Side view (x-z plane): gap, tilt and the transmitter field lines. Bright lines pass through the receiver coil.</div></div></div>
-<div class="card g-ctl" style="margin-top:14px"><div class="ctl"><span>Distance (z)</span><input id="g_z" type="range" min="0.5" max="6" step="0.05" value="1"><b id="g_zv"></b></div>
-<div class="ctl"><span>Tilt (θ)</span><input id="g_t" type="range" min="-60" max="60" step="1" value="0"><b id="g_tv"></b></div>
-<div class="row"><button class="btn o" id="g_rs">Reset position</button><label class="sm"><input type="checkbox" id="g_in" checked> Show coils</label><label class="sm"><input type="checkbox" id="g_fl" checked> Show magnetic field</label></div><div class="sm" id="g_pos"></div></div>
-<div class="m" id="g_m"></div><div class="g-gauge"><div id="g_bar"></div></div><div class="sm" id="g_pct" style="margin-bottom:12px"></div>
-<div class="card" id="g_fb"></div>
-<div class="grid" style="margin-top:14px"><div><canvas id="g_c1" style="height:210px"></canvas></div><div><canvas id="g_c2" style="height:210px"></canvas></div><div><canvas id="g_c3" style="height:210px"></canvas></div></div>
-<div class="card" id="g_res" hidden></div>
-<details class="card g-mod"><summary>About the model (simulated estimates)</summary>
-<p>The pad's transmitter coil (12 turns, 2.4 cm radius) and the phone's receiver coil (14 turns, 1.8 cm radius) are modeled as circular coils. The mutual inductance M is computed numerically from their geometry with Neumann's formula for the position (x, y, z) and tilt (θ). Then k = M / √(L1·L2).</p>
-<p>The pad drives a regulated 1.8 A (RMS) current at 127 kHz and the phone circuit is tuned to it. Induced voltage = ωM·I1, received power = I2²·R_load, and coil efficiency = received power / (received power + coil losses). It does not include the charger electronics, so it is higher than a real whole-system figure. Relative transfer compares the power with the best position the model allows (centered, 0.5 cm gap, flat).</p>
-<p>The same coil model also drives Exp 02, Exp 03 and Factors, with about 85% added for the electronics (so the best case is near 79%, real Qi chargers measure roughly 60 to 80%). Limits: coils are simplified, no ferrite shield, no metal objects, and the charger keeps a fixed current, while a real one would raise its drive when the phone is misaligned. In this game there is no heat and no battery behavior. k, efficiency and battery charging are three different things. Coil values are for teaching, not measured device data. The field lines are the real field of the transmitter loop, drawn for learning, not moving electrons.</p></details></div>
-</section>
+        <section id="science" class="w" hidden><span class="tag">STAGE 03</span>
+            <h1>The science</h1>
+            <p>Seven power-ups of knowledge. Tap a card to open it.</p>
+            <div class="grid" id="sg"></div>
+        </section>
 
-<section id="challenge" class="w" hidden><span class="tag">STAGE 06</span><h1>Discover &amp; challenge</h1>
-<div class="grid"><div class="card"><h3>Compare two experiments</h3><div id="cmp" class="sm">Run two full simulations in the lab to compare them here.</div></div><div class="card"><h3>Your challenges</h3><div id="chl"></div></div></div>
-<h2 style="margin-top:26px">Quiz</h2><div class="card" id="qz"></div>
-<h2 style="margin-top:26px">Science summary</h2><div class="card"><div class="ch"><span>Charging works by induction</span><span class="cy">AC → field → current</span></div><div class="ch"><span>Closer and centered coils</span><span class="cy">Stronger coupling</span></div><div class="ch"><span>Lost energy</span><span class="cy">Becomes heat</span></div><div class="ch"><span>More heat</span><span class="cy">Lower efficiency and slower charging</span></div></div></section>
-</main>
+        <section id="factors" class="w" hidden><span class="tag">STAGE 04</span>
+            <h1>Factors affecting charging</h1>
+            <p>Four things change how well your phone charges. Pick one and try it. Metal objects between the phone and
+                the pad (a coin, a card, a ring) also hurt: they heat up and waste energy, so chargers detect them and
+                stop.</p>
+            <p class="sm">The numbers use a simplified model for learning, not data from a real device.</p>
+            <div class="step" id="ft"></div>
+            <div class="hero">
+                <div><canvas id="c2" style="height:300px"></canvas>
+                    <div class="sm" id="fcap" style="margin-top:8px;text-align:center"></div>
+                </div>
+                <div class="card">
+                    <h3 id="fh"></h3>
+                    <p id="fp"></p>
+                    <div class="ctl"><span>Value</span><input id="fr" type="range"><b id="fv"></b></div>
+                    <div class="m">
+                        <div><b id="fo"></b><span id="fl"></span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<footer><div class="w"><img class="lg" alt="MMA logo"><h2>Wireless Charging Lab</h2>
-<div><a href="#home">Home</a><a href="#how">How It Works</a><a href="#science">The Science</a><a href="#factors">Factors</a><a href="#lab">Interactive Lab</a><a href="#challenge">Discover &amp; Challenge</a></div>
-<div><a href="#" data-f="a">About the Project</a><a href="#" data-f="t">Team Members</a><a href="#" data-f="r">References &amp; Sources</a></div>
-<div class="card" id="fi"></div><p class="sm">© Wireless Charging Lab. All rights reserved.</p></div></footer>
+        <section id="lab" class="w" hidden><span class="tag">STAGE 05</span>
+            <h1>Interactive lab</h1>
+            <div class="step"><button class="on" data-e="e1">Exp 01 · Alignment</button><button data-e="e2">Exp 02 ·
+                    Temperature</button><button data-e="e3">Exp 03 · Full charging</button><button data-e="e4">Exp 04 ·
+                    Charging game</button></div>
+            <div id="e1">
+                <p>Drag the phone left and right on the pad. Find the sweet spot! (charger input 15 W, gap 1 cm;
+                    simplified model)</p>
+                <div class="hero"><canvas id="c3" style="height:300px;cursor:grab"></canvas><canvas id="c4"
+                        style="height:300px"></canvas></div>
+                <div class="m" id="m1"></div>
+                <div class="card" id="x1"></div>
+            </div>
+            <div id="e2" hidden>
+                <p>Change the temperature and see how losses and received power change (charger input 15 W, phone
+                    centered, 1 cm away). Simplified model for learning.</p>
+                <div class="hero">
+                    <div>
+                        <div class="ctl"><span>Temperature</span><input id="t2" type="range" min="20" max="50"
+                                value="25"><b id="v2"></b></div>
+                        <div class="m" id="m2"></div>
+                        <div class="card" id="x2"></div>
+                    </div><canvas id="c5" style="height:280px"></canvas>
+                </div>
+            </div>
+            <div id="e3" hidden>
+                <p>Combine everything, then press Start. Time runs fast: 8 minutes per second. The last 20% of the
+                    battery charges slowly, like a real phone. Simplified model for learning.</p>
+                <div class="hero">
+                    <div>
+                        <div class="ctl"><span>Distance</span><input id="s_d" type="range" min="0.5" max="3" step=".1"
+                                value="1"><b></b></div>
+                        <div class="ctl"><span>Offset</span><input id="s_x" type="range" min="-5" max="5" step=".5"
+                                value="1"><b></b></div>
+                        <div class="ctl"><span>Start temp</span><input id="s_t" type="range" min="20" max="40"
+                                value="25"><b></b></div>
+                        <div class="ctl"><span>Power</span><input id="s_p" type="range" min="5" max="30"
+                                value="15"><b></b></div>
+                        <div class="row"><button class="btn" id="go">Start charging</button><button class="btn o"
+                                id="rs">Reset</button></div>
+                    </div><canvas id="c6" style="height:260px"></canvas>
+                </div>
+                <canvas id="c7" style="height:220px;margin-top:14px"></canvas>
+                <div class="m" id="m3"></div>
+                <div class="card" id="x3">Press Start to run the simulation.</div>
+            </div>
+            <div id="e4" hidden>
+                <p>Find the perfect charging position. Drag the phone on the pad and watch the magnetic field, the power
+                    and the coupling respond. Every number comes from one physics model running in your browser.</p>
+                <div class="lvls" id="g_lv"></div>
+                <div class="card" id="g_goal"></div>
+                <div class="hero g-hero" style="margin-top:14px">
+                    <div><canvas id="g_top" tabindex="0" style="height:360px;cursor:grab"
+                            aria-label="Top view of the phone on the charging pad. Drag or use arrow keys."></canvas>
+                        <div class="sm">Top view: drag the phone (or use the arrow keys).</div>
+                    </div>
+                    <div><canvas id="g_side" style="height:360px"></canvas>
+                        <div class="sm">Side view (x-z plane): gap, tilt and the transmitter field lines. Bright lines
+                            pass through the receiver coil.</div>
+                    </div>
+                </div>
+                <div class="card g-ctl" style="margin-top:14px">
+                    <div class="ctl"><span>Distance (z)</span><input id="g_z" type="range" min="0.5" max="6" step="0.05"
+                            value="1"><b id="g_zv"></b></div>
+                    <div class="ctl"><span>Tilt (θ)</span><input id="g_t" type="range" min="-60" max="60" step="1"
+                            value="0"><b id="g_tv"></b></div>
+                    <div class="row"><button class="btn o" id="g_rs">Reset position</button><label class="sm"><input
+                                type="checkbox" id="g_in" checked> Show coils</label><label class="sm"><input
+                                type="checkbox" id="g_fl" checked> Show magnetic field</label></div>
+                    <div class="sm" id="g_pos"></div>
+                </div>
+                <div class="m" id="g_m"></div>
+                <div class="g-gauge">
+                    <div id="g_bar"></div>
+                </div>
+                <div class="sm" id="g_pct" style="margin-bottom:12px"></div>
+                <div class="card" id="g_fb"></div>
+                <div class="grid" style="margin-top:14px">
+                    <div><canvas id="g_c1" style="height:210px"></canvas></div>
+                    <div><canvas id="g_c2" style="height:210px"></canvas></div>
+                    <div><canvas id="g_c3" style="height:210px"></canvas></div>
+                </div>
+                <div class="card" id="g_res" hidden></div>
+                <details class="card g-mod">
+                    <summary>About the model (simulated estimates)</summary>
+                    <p>The pad's transmitter coil (12 turns, 2.4 cm radius) and the phone's receiver coil (14 turns, 1.8
+                        cm radius) are modeled as circular coils. The mutual inductance M is computed numerically from
+                        their geometry with Neumann's formula for the position (x, y, z) and tilt (θ). Then k = M /
+                        √(L1·L2).</p>
+                    <p>The pad drives a regulated 1.8 A (RMS) current at 127 kHz and the phone circuit is tuned to it.
+                        Induced voltage = ωM·I1, received power = I2²·R_load, and coil efficiency = received power /
+                        (received power + coil losses). It does not include the charger electronics, so it is higher
+                        than a real whole-system figure. Relative transfer compares the power with the best position the
+                        model allows (centered, 0.5 cm gap, flat).</p>
+                    <p>The same coil model also drives Exp 02, Exp 03 and Factors, with about 85% added for the
+                        electronics (so the best case is near 79%, real Qi chargers measure roughly 60 to 80%). Limits:
+                        coils are simplified, no ferrite shield, no metal objects, and the charger keeps a fixed
+                        current, while a real one would raise its drive when the phone is misaligned. In this game there
+                        is no heat and no battery behavior. k, efficiency and battery charging are three different
+                        things. Coil values are for teaching, not measured device data. The field lines are the real
+                        field of the transmitter loop, drawn for learning, not moving electrons.</p>
+                </details>
+            </div>
+        </section>
 
-<script src="js/game.js"></script>
-<script src="js/script.js"></script></body></html>
+        <section id="challenge" class="w" hidden><span class="tag">STAGE 06</span>
+            <h1>Discover &amp; challenge</h1>
+            <div class="grid">
+                <div class="card">
+                    <h3>Compare two experiments</h3>
+                    <div id="cmp" class="sm">Run two full simulations in the lab to compare them here.</div>
+                </div>
+                <div class="card">
+                    <h3>Your challenges</h3>
+                    <div id="chl"></div>
+                </div>
+            </div>
+            <h2 style="margin-top:26px">Quiz</h2>
+            <div class="card" id="qz"></div>
+            <h2 style="margin-top:26px">Science summary</h2>
+            <div class="card">
+                <div class="ch"><span>Charging works by induction</span><span class="cy">AC → field → current</span>
+                </div>
+                <div class="ch"><span>Closer and centered coils</span><span class="cy">Stronger coupling</span></div>
+                <div class="ch"><span>Lost energy</span><span class="cy">Becomes heat</span></div>
+                <div class="ch"><span>More heat</span><span class="cy">Lower efficiency and slower charging</span></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="w"><img class="lg" alt="MMA logo">
+            <h2>Wireless Charging Lab</h2>
+            <div><a href="#home">Home</a><a href="#how">How It Works</a><a href="#science">The Science</a><a
+                    href="#factors">Factors</a><a href="#lab">Interactive Lab</a><a href="#challenge">Discover &amp;
+                    Challenge</a></div>
+            <div><a href="#" data-f="a">About the Project</a><a href="#" data-f="t">Team Members</a><a href="#"
+                    data-f="r">References &amp; Sources</a></div>
+            <div class="card" id="fi"></div>
+            <p class="sm">© Wireless Charging Lab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/game.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
